@@ -1,15 +1,18 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('https://raw.githubusercontent.com/Lumineare/Khodam-online/main/IMG-20240819-WA0100.jpg'); /* Ganti dengan path foto latar belakang Anda */
+    background-image: url('https://raw.githubusercontent.com/Lumineare/Khodam-online/main/IMG-20240819-WA0100.jpg'); /* Path ke foto latar belakang */
     background-size: cover; /* Gambar menutupi seluruh halaman */
     background-position: center; /* Posisi gambar di tengah */
     background-repeat: no-repeat; /* Gambar tidak diulang */
     margin: 0;
     height: 100vh; /* Memastikan gambar menutupi seluruh tinggi viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang kontainer semi-transparan agar foto tetap terlihat */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -18,16 +21,10 @@ body {
     width: 100%;
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Memastikan input dan tombol berada di tengah secara horizontal */
 }
 
 input[type="text"] {
