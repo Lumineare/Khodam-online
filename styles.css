@@ -67,6 +67,16 @@ button:hover {
     display: none;
 }
 
+#backButton {
+    margin-top: 20px;
+    background-color: #FF5733;
+    color: white;
+}
+
+#backButton:hover {
+    background-color: #e04d2d;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 20px;
