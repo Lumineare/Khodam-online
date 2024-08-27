@@ -13,6 +13,8 @@ function getRandomResult() {
 function main() {
     const form = document.getElementById('khodamForm');
     const welcomeText = document.getElementById('welcomeText');
+    const resultDiv = document.getElementById('result');
+    const backButton = document.getElementById('backButton');
     
     form.addEventListener('submit', function(event) {
         event.preventDefault();  // Mencegah pengiriman formulir secara default
@@ -22,12 +24,29 @@ function main() {
 
         if (name) {
             const result = getRandomResult();
-            document.getElementById('result').innerHTML = `Khodam '${name}': ${result}`;
+            resultDiv.innerHTML = `Khodam '${name}': ${result}`;
             
             // Menyembunyikan form dan teks selamat datang setelah nama diinput
             form.classList.add('hidden');
             welcomeText.classList.add('hidden');
+            
+            // Menampilkan tombol Kembali
+            backButton.classList.remove('hidden');
         }
+    });
+
+    // Menambahkan event listener untuk tombol Kembali
+    backButton.addEventListener('click', function() {
+        // Menampilkan kembali form dan teks selamat datang
+        form.classList.remove('hidden');
+        welcomeText.classList.remove('hidden');
+
+        // Menghapus hasil dan menyembunyikan tombol Kembali
+        resultDiv.innerHTML = '';
+        backButton.classList.add('hidden');
+        
+        // Menghapus nilai input sebelumnya
+        document.getElementById('nameInput').value = '';
     });
 }
 
