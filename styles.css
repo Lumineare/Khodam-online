@@ -1,94 +1,161 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-image: url(''); /* Path ke foto latar belakang */
-    background-size: cover; /* Gambar menutupi seluruh halaman */
-    background-position: center; /* Posisi gambar di tengah */
-    background-repeat: no-repeat; /* Gambar tidak diulang */
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #00d4ff;
     margin: 0;
-    height: 100vh; /* Memastikan gambar menutupi seluruh tinggi viewport */
+    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-.container {
-    background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang kontainer semi-transparan agar foto tetap terlihat */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
+header {
     width: 100%;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Memastikan input dan tombol berada di tengah secara horizontal */
-}
-
-input[type="text"] {
+    background-color: #333;
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 300px;
-    box-sizing: border-box;
+    text-align: center;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+header h1 {
+    margin: 0;
+    color: #00d4ff;
+}
+
+#coinDisplay {
+    margin-top: 10px;
+}
+
+#coinDisplay span {
+    font-size: 1.2em;
+}
+
+#coinDisplay button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #00d4ff;
     border: none;
     border-radius: 5px;
+    color: #333;
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #45a049;
+#coinDisplay button:hover {
+    background-color: #00a3cc;
 }
 
-.result {
+main {
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+#gachaSection {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#gachaButton {
+    padding: 10px 20px;
+    background-color: #ff1744;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#gachaButton:hover {
+    background-color: #e6143f;
+    transform: scale(1.05);
+}
+
+#inventorySection {
     margin-top: 20px;
-    font-size: 18px;
-    color: #000000; /* Warna teks hitam */
-    font-weight: bold; /* Teks tebal */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
-.hidden {
+#inventory {
+    list-style: none;
+    padding: 0;
+}
+
+.inventory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5);
+}
+
+.sell-button {
+    background-color: #ff1744;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sell-button:hover {
+    background-color: #e6143f;
+    transform: scale(1.05);
+}
+
+/* Modal Popup */
+.modal {
     display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
-#backButton {
-    margin-top: 20px;
-    background-color: #FF5733;
-    color: white;
+.modal-content {
+    background-color: #333;
+    color: #00d4ff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #00d4ff;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5);
+    animation: showModal 0.3s ease-in-out;
 }
 
-#backButton:hover {
-    background-color: #e04d2d;
+.modal-content img {
+    max-width: 100%;
+    margin-top: 10px;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
+.close {
+    color: #00d4ff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-    h1 {
-        font-size: 20px;
-    }
+.close:hover,
+.close:focus {
+    color: #ff1744;
+}
 
-    button {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .result {
-        font-size: 16px;
-    }
+/* Animasi modal */
+@keyframes showModal {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
 }
