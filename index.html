@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cek Khodam Online</title>
+    <title>Gacha Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 id="welcomeText">Selamat Datang di Cek Khodam Online</h1>
-        <form id="khodamForm">
-            <input type="text" id="nameInput" placeholder="Masukkan nama Anda" required>
-            <button type="submit">Cek Khodam</button>
-        </form>
-        <div id="result" class="result"></div>
-        <button id="backButton" class="hidden">Kembali</button> <!-- Tombol Kembali -->
-    </div>
+    <header>
+        <h1>Gacha Game</h1>
+        <div id="coinDisplay">
+            <span>Koin: </span><span id="coinCount">100</span>
+            <button id="addCoins">Tambah Koin</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="gachaSection">
+            <h2>Try Your Luck!</h2>
+            <button id="gachaButton">Gacha!</button>
+        </section>
+
+        <section id="inventorySection">
+            <h2>Your Inventory</h2>
+            <ul id="inventory"></ul>
+        </section>
+
+        <!-- Modal Popup -->
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="result">You got:</h3>
+                <img id="resultImage" src="" alt="Gacha Result">
+            </div>
+        </div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
