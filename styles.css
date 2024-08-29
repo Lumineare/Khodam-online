@@ -1,161 +1,300 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #00d4ff;
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Gradasi gelap futuristik */
+    color: #fff; /* Warna teks putih untuk kontras */
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
     align-items: center;
+    padding: 20px;
+    animation: backgroundAnimation 10s ease infinite;
 }
 
+/* Header */
 header {
     width: 100%;
-    background-color: #333;
-    padding: 10px;
+    max-width: 900px;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    color: #00d4ff;
-}
-
-#coinDisplay {
-    margin-top: 10px;
-}
-
-#coinDisplay span {
-    font-size: 1.2em;
-}
-
-#coinDisplay button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #00d4ff;
-    border: none;
-    border-radius: 5px;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#coinDisplay button:hover {
-    background-color: #00a3cc;
-}
-
-main {
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-}
-
-#gachaSection {
     margin-bottom: 20px;
+    background: linear-gradient(45deg, #28313b, #485461); /* Gradasi gelap untuk header */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #00d4ff; /* Warna teks neon */
+    text-shadow: 2px 2px 10px rgba(0, 212, 255, 0.8);
+}
+
+/* Gacha Box */
+.gacha-box {
+    background: linear-gradient(120deg, #1a2a6c, #b21f1f, #fdbb2d); /* Gradasi neon futuristik */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.gacha-box h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #f1f1f1;
 }
 
 #gachaButton {
-    padding: 10px 20px;
-    background-color: #ff1744;
-    color: #fff;
+    background-color: #00d4ff; /* Warna neon cerah */
+    color: #333;
     border: none;
+    padding: 15px 30px;
     border-radius: 10px;
-    font-size: 1.2em;
     cursor: pointer;
+    font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5);
 }
 
 #gachaButton:hover {
-    background-color: #e6143f;
+    background-color: #00a3cc; /* Sedikit lebih gelap saat hover */
     transform: scale(1.05);
 }
 
-#inventorySection {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+#result {
+    margin-top: 30px;
+    font-size: 1.5em;
+    color: #00d4ff;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan gelap */
+    padding: 15px;
     border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-#inventory {
+#resultImage {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    padding: 10px;
+}
+
+/* Collection Section */
+.collection {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    background: linear-gradient(135deg, #232526, #414345); /* Gradasi gelap */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.collection h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+}
+
+.collection ul {
     list-style: none;
     padding: 0;
 }
 
-.inventory-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
+.collection li {
     padding: 10px;
-    background-color: #333;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5);
-}
-
-.sell-button {
-    background-color: #ff1744;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
     color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.sell-button:hover {
-    background-color: #e6143f;
+.collection li:hover {
     transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Modal Popup */
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Modal */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.9); /* Background gelap */
+    padding-top: 60px;
 }
 
 .modal-content {
-    background-color: #333;
-    color: #00d4ff;
-    margin: 15% auto;
+    background-color: rgba(31, 31, 31, 0.95); /* Background gelap semi-transparan */
+    margin: 5% auto;
     padding: 20px;
-    border: 2px solid #00d4ff;
-    border-radius: 10px;
+    border: 1px solid #888;
     width: 80%;
-    max-width: 500px;
+    max-width: 400px;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5);
-    animation: showModal 0.3s ease-in-out;
-}
-
-.modal-content img {
-    max-width: 100%;
-    margin-top: 10px;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.5s ease-in-out;
 }
 
 .close {
-    color: #00d4ff;
+    color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: #ff1744;
+    color: #00d4ff;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-/* Animasi modal */
-@keyframes showModal {
-    from {opacity: 0; transform: scale(0.9);}
-    to {opacity: 1; transform: scale(1);}
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
 }
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    background-size: 200% 200%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .gacha-box {
+        padding: 30px;
+    }
+
+    #gachaButton {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+
+    .collection ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .gacha-box {
+        padding: 20px;
+    }
+
+    #gachaButton {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .collection li {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #coinContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        color: #00d4ff;
+        font-size: 1.2em;
+    }
+
+    #coinCount {
+        margin-right: 10px;
+    }
+
+    #addCoins {
+        background-color: #00d4ff;
+        color: #333;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5);
+    }
+
+    #addCoins:hover {
+        background-color: #00a3cc;
+        transform: scale(1.05);
+    }
+}
+            
