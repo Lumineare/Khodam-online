@@ -7,7 +7,7 @@ const items = [
     { name: "Uncommon Item", image: "uncommon.png", rarity: "uncommon", price: 20 },
     { name: "Rare Item", image: "rare.png", rarity: "rare", price: 50 },
     { name: "Epic Item", image: "epic.png", rarity: "epic", price: 100 },
-    { name: "Legendary Item", image: "legendary.png", rarity: "legendary", price: 200 }
+    { name: "Legendary Item", image: "https://raw.githubusercontent.com/Lumineare/Khodam-online/refs/heads/main/FB_IMG_1724758710536.jpg", rarity: "legendary", price: 200 }
 ];
 
 document.getElementById('coinCount').textContent = coinCount;
